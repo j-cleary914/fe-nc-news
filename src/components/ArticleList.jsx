@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import ArticleCard from "./ArticleCard";
 import * as api from "../api";
 
@@ -9,15 +8,6 @@ class ArticleList extends Component {
     isLoading: true
   };
 
-  // componentDidMount() {
-  //   axios
-  //     .get("https://northcoder-news-backend.herokuapp.com/api/articles")
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //       this.setState({ articles: data.articles });
-  //     });
-  // }
-
   componentDidMount() {
     api.getArticles().then(articles => {
       this.setState({ articles, isLoading: false });
@@ -26,7 +16,7 @@ class ArticleList extends Component {
 
   render() {
     const articles = this.state.articles;
-    console.log(this.state.articles);
+    // console.log(this.state.articles);
     return this.state.isLoading ? (
       <p>Loading...</p>
     ) : (

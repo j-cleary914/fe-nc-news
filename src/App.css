@@ -2,21 +2,61 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+li {
+  list-style-type: none;
+  background-color: rgb(241, 241, 241);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Header {
+  background-color: rgb(175, 175, 175);
 }
 
-.App-link {
-  color: #09d3ac;
+.article {
+  background-color: rgb(189, 245, 192);
+}
+
+.articleCard {
+  background-color: rgb(189, 245, 192);
+}
+
+.commentCard {
+  background-color: rgb(198, 191, 238);
+}
+
+.dropbtn {
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 3px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
