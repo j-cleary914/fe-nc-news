@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const getArticles = async (author, topic, sort_by, order) => {
-  console.log(author, topic, sort_by, order, "api.js");
   const { data } = await axios.get(
     "https://northcoder-news-backend.herokuapp.com/api/articles",
     {
@@ -21,7 +20,6 @@ export const getArticle = async id => {
 };
 
 export const getArticleComments = async (id, sort_by, order) => {
-  console.log(id, sort_by, order);
   const { data } = await axios.get(
     `https://northcoder-news-backend.herokuapp.com/api/articles/${id}/comments`,
     {
@@ -53,4 +51,32 @@ export const getUser = async user => {
   );
 
   return data.user;
+};
+
+export const deleteComment = async id => {
+  const response = await axios.delete(
+    `https://northcoder-news-backend.herokuapp.com/api/comments/${id}`
+  );
+  console.log(response);
+  return response.status;
+};
+
+export const patchCommentVotes = async (id, incrementBy) => {
+  const {
+    data
+  } = await axios.patch(
+    `https://northcoder-news-backend.herokuapp.com/api/comments/${id}`,
+    { inc_votes: incrementBy }
+  );
+  return data;
+};
+
+export const patchArticleVotes = async (id, incrementBy) => {
+  const {
+    data
+  } = await axios.patch(
+    `https://northcoder-news-backend.herokuapp.com/api/articles/${id}`,
+    { inc_votes: incrementBy }
+  );
+  return data;
 };

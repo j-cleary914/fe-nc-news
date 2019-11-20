@@ -3,9 +3,10 @@ import * as api from "../api";
 import CommentList from "./CommentList";
 import timeSince from "../utils";
 import { Link } from "@reach/router";
+import Voter from "./Voter";
 
 class Article extends Component {
-  state = { article: {} };
+  state = { article: {}, isLoading: true };
 
   fetchArticle = () => {
     api.getArticle(this.props.article_id).then(article => {
@@ -18,7 +19,6 @@ class Article extends Component {
   }
 
   render() {
-    console.log("rendering!!");
     const {
       title,
       author,
@@ -34,17 +34,18 @@ class Article extends Component {
       <div className="GenericWrapper">
         {" "}
         <div className="article">
-          <h1>{title}</h1>{" "}
+          <h1>{title}</h1> <p>{body}</p>{" "}
           <p>
-            votes: {votes}, submitted {timeSinceString} by{" "}
+            submitted {timeSinceString} by{" "}
             <Link to={`/users/${author}`}>{author}</Link> in{" "}
             <Link to={`/articles/${topic}`}>{topic}</Link>
           </p>
-          <p>{body}</p>{" "}
+          <Voter votes={votes} id={article_id} votingOn="article" />
         </div>
         <CommentList
           article_id={this.props.article_id}
           user={this.props.user}
+          comment_count={comment_count}
         />
       </div>
     );

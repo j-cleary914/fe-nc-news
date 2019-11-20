@@ -9,6 +9,18 @@ class CommentList extends Component {
     comments: []
   };
 
+  removeComment = id => {
+    api.deleteComment(id).then(response => {
+      console.log(id, response);
+    });
+    this.setState(currentState => {
+      let newComments = [...currentState.comments].filter(
+        comment => comment.comment_id !== id
+      );
+      return { comments: newComments };
+    });
+  };
+
   fetchArticleComents = (id, sort_by, order) => {
     api.getArticleComments(id, sort_by, order).then(comments => {
       this.setState({ comments });
@@ -31,7 +43,6 @@ class CommentList extends Component {
   }
 
   render() {
-    console.log("rendering!!");
     const comments = this.state.comments;
 
     return (
@@ -55,7 +66,8 @@ class CommentList extends Component {
                 created_at={comment.created_at}
                 author={comment.author}
                 body={comment.body}
-                author={comment.author}
+                user={this.props.user}
+                removeComment={this.removeComment}
               />
             );
           })}

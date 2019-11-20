@@ -6,22 +6,30 @@ const Navbar = () => {
     <ul className="navbarUl">
       <Link to="/">
         <li className="navbarLi">
-          <button name="home">Home</button>
+          <button name="home" className="navbarButton">
+            Home
+          </button>
         </li>
       </Link>
       <Link to="/articles/coding">
         <li className="navbarLi">
-          <button name="coding">Coding</button>
+          <button name="coding" className="navbarButton">
+            Coding
+          </button>
         </li>
       </Link>
       <Link to="/articles/cooking">
         <li className="navbarLi">
-          <button name="cooking">Cooking</button>
+          <button name="cooking" className="navbarButton">
+            Cooking
+          </button>
         </li>
       </Link>
       <Link to="/articles/football">
         <li className="navbarLi">
-          <button name="football">Football</button>
+          <button name="football" className="navbarButton">
+            Football
+          </button>
         </li>
       </Link>
     </ul>

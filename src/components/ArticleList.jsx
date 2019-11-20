@@ -10,11 +10,9 @@ class ArticleList extends Component {
   };
 
   fetchArticles = (author, topic, sort_by, order) => {
-    console.log(author, topic, sort_by, order, "articleList.js");
     api
       .getArticles(this.props.user, this.props.topic, sort_by, order)
       .then(articles => {
-        console.log(articles);
         this.setState({ articles, isLoading: false });
       });
   };
@@ -36,7 +34,10 @@ class ArticleList extends Component {
       <p>Loading...</p>
     ) : (
       <div>
-        <ArticleDropdown fetchArticles={this.fetchArticles} user={this.props.user}/>
+        <ArticleDropdown
+          fetchArticles={this.fetchArticles}
+          user={this.props.user}
+        />
         <ul className="articleListLi">
           {articles.map(article => {
             //console.log(article.comment_count);

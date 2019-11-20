@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
 import UserProfile from "./components/UserProfile";
+import Homepage from "./components/Homepage";
 
 class App extends Component {
   state = { user: "jessjelly" };
@@ -22,6 +23,7 @@ class App extends Component {
           userDropdownClicked={this.userDropdownClicked}
         />
         <Router>
+          <Homepage path="/" />
           <ArticleList path="articles/" />
           <ArticleList path="articles/coding" topic="coding" />
           <ArticleList path="articles/cooking" topic="cooking" />

@@ -31,7 +31,7 @@ class CommentDropdown extends Component {
   render() {
     return (
       <div className="dropdown">
-        Sort comments by
+        Sort {this.props.comment_count} comments by
         <button className="dropbtn">{this.state.sort_by} ▼</button>
         <div
           id="myDropdown"
