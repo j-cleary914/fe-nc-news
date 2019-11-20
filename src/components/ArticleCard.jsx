@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import timeSince from "../utils";
 
 const ArticleCard = ({
   title,
@@ -10,11 +11,15 @@ const ArticleCard = ({
   topic,
   id
 }) => {
+  let timeSinceString = timeSince(new Date(created_at));
   return (
     <li className="articleCard">
       <Link to={`/articles/${id}`}>
+        <p>{title}</p>
         <p>
-          {title} by '{author}'
+          votes: {votes}, {comment_count} comments, submitted by{" "}
+          <Link to={`/users/${author}`}>{author}</Link> {timeSinceString} to{" "}
+          <Link to={`/articles/${topic}`}>{topic}</Link>
         </p>
       </Link>
     </li>

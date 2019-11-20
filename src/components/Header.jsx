@@ -1,11 +1,16 @@
 import React from "react";
-//import { Link } from "@reach/router";
+import UserDropdown from "./UserDropdown";
+import Navbar from "./Navbar";
 
-const Header = () => {
+const Header = props => {
   return (
     <div className="Header">
-      <h1>NC News</h1> --make me a grid of 3 maybe? -- search bar in middle --
-      user dropdown to be able to change user on right
+      <h1>NC News</h1>
+      <UserDropdown
+        user={props.user}
+        userDropdownClicked={props.userDropdownClicked}
+      />
+      <Navbar />
     </div>
   );
 };

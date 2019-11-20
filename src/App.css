@@ -57,6 +57,25 @@ li {
   display: block;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+.navbarUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbarLi {
+  float: left;
+}
+
+.navbarLi a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbarLi a:hover {
+  background-color: rgb(198, 191, 238);
 }
