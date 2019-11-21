@@ -6,12 +6,17 @@ import { Link } from "@reach/router";
 import Voter from "./Voter";
 
 class Article extends Component {
-  state = { article: {}, isLoading: true };
+  state = { article: {}, isLoading: true, err: null };
 
   fetchArticle = () => {
-    api.getArticle(this.props.article_id).then(article => {
-      this.setState({ article });
-    });
+    api
+      .getArticle(this.props.article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   };
 
   componentDidMount() {
@@ -30,6 +35,8 @@ class Article extends Component {
       article_id
     } = this.state.article;
     let timeSinceString = timeSince(new Date(created_at));
+
+    if (this.state.isLoading) return <p>Loading...</p>;
     return (
       <div className="GenericWrapper">
         {" "}
@@ -46,6 +53,7 @@ class Article extends Component {
           article_id={this.props.article_id}
           user={this.props.user}
           comment_count={comment_count}
+          topic={topic}
         />
       </div>
     );

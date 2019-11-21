@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../api";
 import ArticleDropdown from "./ArticleDropdown";
+import ErrorShower from "./ErrorShower";
 
 class ArticleList extends Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    err: null
   };
 
   fetchArticles = (author, topic, sort_by, order) => {
@@ -14,6 +16,9 @@ class ArticleList extends Component {
       .getArticles(this.props.user, this.props.topic, sort_by, order)
       .then(articles => {
         this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
       });
   };
 
@@ -30,9 +35,10 @@ class ArticleList extends Component {
   render() {
     const articles = this.state.articles;
     // console.log(this.state.articles);
-    return this.state.isLoading ? (
-      <p>Loading...</p>
-    ) : (
+
+    if (this.state.isLoading) return <p>Loading...</p>;
+    if (this.state.err) return <ErrorShower />;
+    return (
       <div>
         <ArticleDropdown
           fetchArticles={this.fetchArticles}

@@ -7,8 +7,7 @@ class ArticleDropdown extends Component {
 
   dropdownClicked = e => {
     e.preventDefault();
-    console.log("dropdown clicked!");
-    console.log(e.target.name);
+
     this.setState({ sort_by: e.target.name });
 
     let sort_by = "created_at";
@@ -31,7 +30,6 @@ class ArticleDropdown extends Component {
       order = "asc";
     }
 
-    console.log(sort_by, order, this.props, "article dropdown");
     this.props.fetchArticles(this.props.user, this.props.topic, sort_by, order);
   };
 

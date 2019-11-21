@@ -21,8 +21,30 @@ li {
 
 .commentCard {
   background-color: rgb(198, 191, 238);
+  display: grid;
+  grid-template-columns: 100px auto 50px;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
 }
 
+.commentVoter {
+  grid-area: 1/1/4/2;
+}
+
+.commentBody {
+  grid-area: 1/2/3/4;
+  justify-content: center;
+}
+
+.commentInfo {
+  grid-area: 3/2/4/3;
+  justify-content: flex-end;
+}
+
+.commentDeleter {
+  grid-area: 3/3/4/4;
+}
 .dropbtn {
   font-size: 16px;
   border: none;
@@ -73,11 +95,28 @@ li {
 }
 
 .navbarButton {
-  background-color: rgb(220, 220, 220);
   border: none;
   padding: 15px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+.voteButton {
+  border: none;
+}
+
+.upvoteButtonClicked {
+  border: none;
+  opacity: 0.4;
+  background-color: rgb(243, 213, 78);
+  cursor: not-allowed;
+}
+
+.downvoteButtonClicked {
+  border: none;
+  opacity: 0.4;
+  background-color: rgb(71, 43, 226);
+  cursor: not-allowed;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import timeSince from "../utils";
+import Voter from "./Voter";
 
 const ArticleCard = ({
   title,
@@ -16,12 +17,18 @@ const ArticleCard = ({
     <li className="articleCard">
       <Link to={`/articles/${id}`}>
         <p>{title}</p>
-        <p>
-          votes: {votes}, {comment_count} comments, submitted by{" "}
-          <Link to={`/users/${author}`}>{author}</Link> {timeSinceString} to{" "}
-          <Link to={`/articles/${topic}`}>{topic}</Link>
-        </p>
       </Link>
+      <p>
+        votes: {votes}, {comment_count} comments, submitted by{" "}
+        <Link to={`/users/${author}`}>{author}</Link> {timeSinceString} to{" "}
+        <Link to={`/articles/${topic}`}>{topic}</Link>
+      </p>
+      <Voter
+        className="articleVoter"
+        votes={votes}
+        id={id}
+        votingOn="article"
+      />
     </li>
   );
 };

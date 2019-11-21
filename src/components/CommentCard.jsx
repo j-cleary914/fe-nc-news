@@ -9,13 +9,14 @@ class CommentCard extends Component {
     let timeSinceString = timeSince(new Date(this.props.created_at));
     return (
       <div className="commentCard">
-        <p>{this.props.body}</p>
-        <p>
+        <p className="commentBody">{this.props.body}</p>
+        <p className="commentInfo">
           submitted {timeSinceString} by{" "}
-          <Link to={`/users/${this.props.author}`}>{this.props.author}</Link> in
-          (topic here)
+          <Link to={`/users/${this.props.author}`}>{this.props.author}</Link> in{" "}
+          <Link to={`/articles/${this.props.topic}`}>{this.props.topic}</Link>
         </p>
         <Voter
+          className="commentVoter"
           votes={this.props.votes}
           id={this.props.comment_id}
           votingOn="comment"

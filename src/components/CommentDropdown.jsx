@@ -7,8 +7,7 @@ class CommentDropdown extends Component {
 
   dropdownClicked = e => {
     e.preventDefault();
-    console.log("dropdown clicked!");
-    console.log(e.target.name);
+
     this.setState({ sort_by: e.target.name });
     let id = this.props.article_id;
     let sort_by = "created_at";

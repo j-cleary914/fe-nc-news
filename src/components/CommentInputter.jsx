@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 class CommentInputter extends Component {
   state = {
     input: "feel free to change me"
@@ -9,6 +8,7 @@ class CommentInputter extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addComment(this.state.input);
+    this.setState({ input: "" });
   };
 
   handleChange = e => {

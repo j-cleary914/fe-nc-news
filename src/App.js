@@ -6,6 +6,7 @@ import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
 import UserProfile from "./components/UserProfile";
 import Homepage from "./components/Homepage";
+import ErrorShower from "./components/ErrorShower";
 
 class App extends Component {
   state = { user: "jessjelly" };
@@ -30,6 +31,7 @@ class App extends Component {
           <ArticleList path="articles/football" topic="football" />
           <Article path="articles/:article_id" user={this.state.user} />
           <UserProfile path="users/:user" />
+          <ErrorShower default />
         </Router>
       </div>
     );

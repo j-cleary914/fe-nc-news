@@ -45,7 +45,6 @@ export const postComment = async (id, username, body) => {
 };
 
 export const getUser = async user => {
-  console.log(user, "<----");
   const { data } = await axios.get(
     `https://northcoder-news-backend.herokuapp.com/api/users/${user}`
   );
@@ -57,7 +56,7 @@ export const deleteComment = async id => {
   const response = await axios.delete(
     `https://northcoder-news-backend.herokuapp.com/api/comments/${id}`
   );
-  console.log(response);
+
   return response.status;
 };
 

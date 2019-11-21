@@ -6,7 +6,9 @@ import CommentInputter from "./CommentInputter";
 
 class CommentList extends Component {
   state = {
-    comments: []
+    comments: [],
+    isLoading: true,
+    err: null
   };
 
   removeComment = id => {
@@ -22,9 +24,14 @@ class CommentList extends Component {
   };
 
   fetchArticleComents = (id, sort_by, order) => {
-    api.getArticleComments(id, sort_by, order).then(comments => {
-      this.setState({ comments });
-    });
+    api
+      .getArticleComments(id, sort_by, order)
+      .then(comments => {
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   };
 
   addComment = comment_body => {
@@ -45,6 +52,7 @@ class CommentList extends Component {
   render() {
     const comments = this.state.comments;
 
+    if (this.state.isLoading) return <p>Loading...</p>;
     return (
       <div>
         <CommentDropdown
@@ -68,6 +76,7 @@ class CommentList extends Component {
                 body={comment.body}
                 user={this.props.user}
                 removeComment={this.removeComment}
+                topic={this.props.topic}
               />
             );
           })}
