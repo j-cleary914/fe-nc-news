@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import timeSince from "../utils";
 import Voter from "./Voter";
+import styles from "./ArticleCard.module.css";
 
 const ArticleCard = ({
   title,
@@ -14,21 +15,16 @@ const ArticleCard = ({
 }) => {
   let timeSinceString = timeSince(new Date(created_at));
   return (
-    <li className="articleCard">
+    <li className={styles.articleCard}>
       <Link to={`/articles/${id}`}>
-        <p>{title}</p>
+        <p className={styles.articleTitle}>{title}</p>
       </Link>
-      <p>
-        votes: {votes}, {comment_count} comments, submitted by{" "}
+      <p className={styles.articleInfo}>
+        {comment_count} comments, submitted by{" "}
         <Link to={`/users/${author}`}>{author}</Link> {timeSinceString} to{" "}
         <Link to={`/articles/${topic}`}>{topic}</Link>
       </p>
-      <Voter
-        className="articleVoter"
-        votes={votes}
-        id={id}
-        votingOn="article"
-      />
+      <Voter votes={votes} id={id} votingOn="article" />
     </li>
   );
 };

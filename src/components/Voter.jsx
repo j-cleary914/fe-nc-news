@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
+import styles from "./CommentCard.module.css";
 
 class Voter extends Component {
   state = {
@@ -16,26 +17,18 @@ class Voter extends Component {
         incrementBy = 2;
       }
       if (this.props.votingOn === "article" && this.state.upClicked === false) {
-        api.patchArticleVotes(this.props.id, incrementBy).then(response => {
-          console.log(response.article.votes);
-        });
+        api.patchArticleVotes(this.props.id, incrementBy);
       }
       if (this.props.votingOn === "comment" && this.state.upClicked === false) {
-        api.patchCommentVotes(this.props.id, incrementBy).then(response => {
-          console.log(response.comment.votes);
-        });
+        api.patchCommentVotes(this.props.id, incrementBy);
       }
     } else if (incrementBy === 1 && this.state.upClicked === true) {
       this.setState({ change: 0, upClicked: false });
       if (this.props.votingOn === "article" && this.state.upClicked === true) {
-        api.patchArticleVotes(this.props.id, -1).then(response => {
-          console.log(response.article.votes);
-        });
+        api.patchArticleVotes(this.props.id, -1);
       }
       if (this.props.votingOn === "comment" && this.state.upClicked === true) {
-        api.patchCommentVotes(this.props.id, -1).then(response => {
-          console.log(response.comment.votes);
-        });
+        api.patchCommentVotes(this.props.id, -1);
       }
     }
 
@@ -83,7 +76,6 @@ class Voter extends Component {
   };
 
   render() {
-    // console.log("rendering with ", this.state);
     let upButtonClass = "voteButton";
     let downButtonClass = "voteButton";
     if (this.state.upClicked === true) {
@@ -94,7 +86,7 @@ class Voter extends Component {
     }
 
     return (
-      <div>
+      <div className={styles.voter}>
         <button className={upButtonClass} onClick={() => this.handleClick(1)}>
           ▲
         </button>

@@ -1,0 +1,31 @@
+.commentCard {
+  background-color: rgb(198, 191, 238);
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-areas: "vote comment comment" ". info deleteButton";
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.voter {
+  grid-area: vote;
+}
+
+.commentBody {
+  grid-area: comment;
+}
+
+.commentInfo {
+  grid-area: info;
+}
+
+.commentDeleter {
+  grid-area: deleteButton;
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgb(27, 8, 196);
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -23,7 +23,7 @@ class App extends Component {
           user={this.state.user}
           userDropdownClicked={this.userDropdownClicked}
         />
-        <Router>
+        <Router className="content">
           <Homepage path="/" />
           <ArticleList path="articles/" />
           <ArticleList path="articles/coding" topic="coding" />

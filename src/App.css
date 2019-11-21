@@ -1,50 +1,17 @@
-.App {
-  text-align: center;
+.GenericWrapper {
+  background-color: rgb(252, 227, 227);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  margin: 5px 50px;
 }
 
-li {
-  list-style-type: none;
-  background-color: rgb(241, 241, 241);
+.textInputter {
+  margin: 8px;
+  width: 96%;
 }
 
-.Header {
-  background-color: rgb(175, 175, 175);
-}
-
-.article {
-  background-color: rgb(189, 245, 192);
-}
-
-.articleCard {
-  background-color: rgb(189, 245, 192);
-}
-
-.commentCard {
-  background-color: rgb(198, 191, 238);
-  display: grid;
-  grid-template-columns: 100px auto 50px;
-  grid-template-rows: auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
-}
-
-.commentVoter {
-  grid-area: 1/1/4/2;
-}
-
-.commentBody {
-  grid-area: 1/2/3/4;
-  justify-content: center;
-}
-
-.commentInfo {
-  grid-area: 3/2/4/3;
-  justify-content: flex-end;
-}
-
-.commentDeleter {
-  grid-area: 3/3/4/4;
-}
 .dropbtn {
   font-size: 16px;
   border: none;
@@ -79,30 +46,6 @@ li {
   display: block;
 }
 
-.navbarUl {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.navbarLi {
-  float: left;
-}
-
-.navbarButton:hover {
-  background-color: rgb(200, 200, 200);
-}
-
-.navbarButton {
-  border: none;
-  padding: 15px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
 .voteButton {
   border: none;
 }
@@ -111,12 +54,10 @@ li {
   border: none;
   opacity: 0.4;
   background-color: rgb(243, 213, 78);
-  cursor: not-allowed;
 }
 
 .downvoteButtonClicked {
   border: none;
   opacity: 0.4;
   background-color: rgb(71, 43, 226);
-  cursor: not-allowed;
 }

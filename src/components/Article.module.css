@@ -1,0 +1,25 @@
+.article {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 50px, auto;
+  grid-template-areas: "vote title" ". body" ". info";
+  grid-gap: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.articleTitle {
+  grid-area: title;
+}
+
+.articleBody {
+  grid-area: body;
+}
+
+.articleInfo {
+  grid-area: info;
+}
+
+.voter {
+  grid-area: vote;
+}

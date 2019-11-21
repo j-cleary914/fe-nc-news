@@ -3,6 +3,7 @@ import CommentCard from "./CommentCard";
 import * as api from "../api";
 import CommentDropdown from "./CommentDropdown";
 import CommentInputter from "./CommentInputter";
+import styles from "./CommentList.modules.css";
 
 class CommentList extends Component {
   state = {

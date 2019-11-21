@@ -19,8 +19,7 @@ class CommentInputter extends Component {
     return (
       <div>
         <textarea
-          rows="4"
-          cols="50"
+          className="textInputter"
           value={this.state.input}
           onChange={this.handleChange}
         ></textarea>

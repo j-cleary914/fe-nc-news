@@ -4,6 +4,7 @@ import CommentList from "./CommentList";
 import timeSince from "../utils";
 import { Link } from "@reach/router";
 import Voter from "./Voter";
+import styles from "./Article.module.css";
 
 class Article extends Component {
   state = { article: {}, isLoading: true, err: null };
@@ -40,9 +41,10 @@ class Article extends Component {
     return (
       <div className="GenericWrapper">
         {" "}
-        <div className="article">
-          <h1>{title}</h1> <p>{body}</p>{" "}
-          <p>
+        <div className={styles.article}>
+          <h1 className={styles.articleTitle}>{title}</h1>{" "}
+          <p className={styles.articleBody}>{body}</p>{" "}
+          <p className={styles.articleInfo}>
             submitted {timeSinceString} by{" "}
             <Link to={`/users/${author}`}>{author}</Link> in{" "}
             <Link to={`/articles/${topic}`}>{topic}</Link>
