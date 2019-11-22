@@ -3,7 +3,8 @@ import CommentCard from "./CommentCard";
 import * as api from "../api";
 import CommentDropdown from "./CommentDropdown";
 import CommentInputter from "./CommentInputter";
-import styles from "./CommentList.modules.css";
+import styles from "./CommentList.module.css";
+import ErrorShower from "./ErrorShower";
 
 class CommentList extends Component {
   state = {
@@ -51,11 +52,12 @@ class CommentList extends Component {
   }
 
   render() {
-    const comments = this.state.comments;
+    const { comments, isLoading, err } = this.state;
 
-    if (this.state.isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...</p>;
+    if (err) return <ErrorShower err={this.state.err} />;
     return (
-      <div>
+      <div className="randomClassName">
         <CommentDropdown
           article_id={this.props.article_id}
           fetchArticleComents={this.fetchArticleComents}
@@ -64,12 +66,11 @@ class CommentList extends Component {
           article_id={this.props.article_id}
           addComment={this.addComment}
         />
-        <ul className="commentListUl">
+        <ul className={styles.commentListUl}>
           {comments.map(comment => {
             return (
               <CommentCard
                 key={comment.comment_id}
-                className="Header"
                 comment_id={comment.comment_id}
                 votes={comment.votes}
                 created_at={comment.created_at}

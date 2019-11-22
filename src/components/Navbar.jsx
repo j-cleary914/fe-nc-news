@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
 import styles from "./Navbar.module.css";
+import UserDropdown from "./UserDropdown";
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <ul className={styles.navbarUl}>
       <Link to="/">
@@ -33,6 +34,12 @@ const Navbar = () => {
           </button>
         </li>
       </Link>
+      <div className={styles.dropdown}>
+        <UserDropdown
+          user={props.user}
+          userDropdownClicked={props.userDropdownClicked}
+        />
+      </div>
     </ul>
   );
 };

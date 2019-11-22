@@ -1,13 +1,14 @@
 import React from "react";
+import styles from "./Navbar.module.css";
 
 const UserDropdown = props => {
   return (
-    <div className="dropdown">
+    <div className={styles.dropdown}>
       Select User:
       <button className="dropbtn">{props.user} ▼</button>
       <div
         id="myDropdown"
-        className="dropdown-content"
+        className={styles.dropdownContent}
         onClick={props.userDropdownClicked}
       >
         <button name="weegembump">weegembump</button>

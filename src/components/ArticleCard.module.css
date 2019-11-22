@@ -2,7 +2,7 @@
   background-color: rgb(238, 202, 191);
   display: grid;
   grid-template-columns: 50px auto;
-  grid-template-areas: "vote title title" " . info info";
+  grid-template-areas: "vote title title" " vote info info";
   grid-gap: 10px;
   padding: 10px;
   margin: 5px;

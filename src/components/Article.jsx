@@ -5,6 +5,7 @@ import timeSince from "../utils";
 import { Link } from "@reach/router";
 import Voter from "./Voter";
 import styles from "./Article.module.css";
+import ErrorShower from "./ErrorShower";
 
 class Article extends Component {
   state = { article: {}, isLoading: true, err: null };
@@ -16,7 +17,7 @@ class Article extends Component {
         this.setState({ article, isLoading: false });
       })
       .catch(err => {
-        this.setState({ err });
+        this.setState({ err, isLoading: false });
       });
   };
 
@@ -25,6 +26,7 @@ class Article extends Component {
   }
 
   render() {
+    const { err, isLoading } = this.state;
     const {
       title,
       author,
@@ -37,7 +39,8 @@ class Article extends Component {
     } = this.state.article;
     let timeSinceString = timeSince(new Date(created_at));
 
-    if (this.state.isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...</p>;
+    if (err) return <ErrorShower err={this.state.err}/>;
     return (
       <div className="GenericWrapper">
         {" "}

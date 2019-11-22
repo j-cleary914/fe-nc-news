@@ -12,6 +12,7 @@ class App extends Component {
   state = { user: "jessjelly" };
 
   userDropdownClicked = e => {
+    console.log("dropdown clicked!");
     e.preventDefault();
     this.setState({ user: e.target.name });
   };
