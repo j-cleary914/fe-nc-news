@@ -7,6 +7,10 @@
   margin: 5px 50px;
 }
 
+.articleListLi {
+  padding-inline-start: 0px;
+}
+
 .textInputter {
   margin: 8px;
   width: 96%;
