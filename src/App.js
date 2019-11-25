@@ -12,7 +12,7 @@ class App extends Component {
   state = { user: "jessjelly" };
 
   userDropdownClicked = e => {
-    console.log("dropdown clicked!");
+    console.log("dropdown clicked! ", e.target.name);
     e.preventDefault();
     this.setState({ user: e.target.name });
   };
@@ -24,6 +24,7 @@ class App extends Component {
           user={this.state.user}
           userDropdownClicked={this.userDropdownClicked}
         />
+
         <Router className="content">
           <Homepage path="/" />
           <ArticleList path="articles/" />

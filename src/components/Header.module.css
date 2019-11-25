@@ -1,4 +1,18 @@
 .Header {
-  background-color: rgb(226, 124, 124);
+  background-color: rgb(186, 31, 49);
   overflow: auto;
+  padding: 20px;
+  border: 20px;
+}
+
+h1 {
+  color: black;
+  font-size: 50px;
+}
+
+@media only screen and (max-width: 650px) {
+  .Header {
+    padding: 0;
+    border: 0;
+  }
 }

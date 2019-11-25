@@ -1,0 +1,48 @@
+.navbar {
+  overflow: hidden;
+  background-color: rgb(32, 40, 41);
+  grid-area: menu;
+}
+
+.navbar p {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar p:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+.container {
+  background-color: rgb(32, 40, 41);
+  grid-template-rows: 50px auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: "icon dropdown" "menu menu";
+
+  padding: 10px;
+  margin: 5px;
+  display: none;
+}
+
+.icon {
+  grid-area: icon;
+}
+
+.dropdown {
+  grid-area: dropdown;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: grid;
+  }
+  .dropdown {
+    float: right;
+  }
+}
+
+i {
+  color: white;
+}

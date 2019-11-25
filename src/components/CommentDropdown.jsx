@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./Article.module.css";
 
 class CommentDropdown extends Component {
   state = {
@@ -29,18 +30,22 @@ class CommentDropdown extends Component {
 
   render() {
     return (
-      <div className="dropdown">
+      <div className={styles.dropdown}>
         Sort {this.props.comment_count} comments by
-        <button className="dropbtn">{this.state.sort_by} ▼</button>
-        <div
-          id="myDropdown"
-          className="dropdown-content"
-          onClick={this.dropdownClicked}
-        >
-          <button name="Votes">Votes</button>
-          <button name="Votes asc">Votes asc</button>
-          <button name="Old">Old </button>
-          <button name="New">New </button>
+        <button className={styles.dropbtn}>{this.state.sort_by} ▼</button>
+        <div className={styles.dropdownContent} onClick={this.dropdownClicked}>
+          <button name="Votes" className={styles.button}>
+            Votes
+          </button>
+          <button name="Votes asc" className={styles.button}>
+            Votes asc
+          </button>
+          <button name="Old" className={styles.button}>
+            Old{" "}
+          </button>
+          <button name="New" className={styles.button}>
+            New{" "}
+          </button>
         </div>
       </div>
     );

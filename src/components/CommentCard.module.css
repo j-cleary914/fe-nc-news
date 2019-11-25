@@ -1,5 +1,5 @@
 .commentCard {
-  background-color: rgb(198, 191, 238);
+  background-color: rgb(219, 219, 219);
   display: grid;
   grid-template-columns: 50px auto 50px;
   grid-template-areas: "vote comment comment" "vote info deleteButton";
@@ -17,10 +17,12 @@
 }
 
 .commentInfo {
+  font-size: 12px;
   grid-area: info;
 }
 
 .commentDeleter {
+  font-size: 11px;
   grid-area: deleteButton;
   background: none;
   border: none;

@@ -23,6 +23,9 @@ function timeSince(date) {
     return interval + " minutes ago";
   }
 
+  if (seconds < 10) {
+    return "just now";
+  }
   return Math.floor(seconds) + " seconds ago";
 }
 

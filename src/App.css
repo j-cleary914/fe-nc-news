@@ -1,5 +1,5 @@
 .GenericWrapper {
-  background-color: rgb(252, 227, 227);
+  background-color: #f9dede;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,4 +50,12 @@
   border: none;
   opacity: 0.4;
   background-color: rgb(71, 43, 226);
+}
+
+h1 {
+  margin: 20px;
+}
+
+h3 {
+  margin: 20px;
 }

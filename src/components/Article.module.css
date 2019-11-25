@@ -1,15 +1,28 @@
 .article {
   max-width: 100%;
   display: grid;
-  grid-template-columns: 50px, auto;
+  grid-template-columns: 50px auto;
   grid-template-areas: "vote title" ". body" ". info";
   grid-gap: 10px;
   padding: 10px;
   margin: 5px;
 }
 
+@media only screen and (max-width: 600px) {
+  .article {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-areas: "vote title" "body body" "info info";
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 5px;
+  }
+}
+
 .articleTitle {
   grid-area: title;
+  font-size: 30px;
 }
 
 .articleBody {
@@ -17,9 +30,54 @@
 }
 
 .articleInfo {
+  font-size: 13px;
   grid-area: info;
 }
 
 .voter {
   grid-area: vote;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(173, 173, 173);
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownContent button:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+.button {
+  background-color: rgb(220, 220, 220);
+  border: none;
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  font-size: 16px;
 }

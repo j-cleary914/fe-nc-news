@@ -3,6 +3,7 @@ import ArticleCard from "./ArticleCard";
 import * as api from "../api";
 import ArticleDropdown from "./ArticleDropdown";
 import ErrorShower from "./ErrorShower";
+import styles from "./ArticleList.module.css";
 
 class ArticleList extends Component {
   state = {
@@ -69,7 +70,7 @@ class ArticleList extends Component {
     if (isLoading) return <p>Loading...</p>;
     if (err) return <ErrorShower err={this.state.err} />;
     return (
-      <div>
+      <div className={styles.wrapper}>
         <ArticleDropdown
           dropdownClicked={this.dropdownClicked}
           sort_by={this.state.sort_by}
