@@ -31,3 +31,8 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.number {
+  font-size: 15px;
+  font-weight: bold;
+}

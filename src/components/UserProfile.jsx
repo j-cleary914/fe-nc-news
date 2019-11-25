@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../api";
 import ArticleList from "./ArticleList";
 import ErrorShower from "./ErrorShower";
+import styles from "./UserProfile.module.css";
 
 class UserProfile extends Component {
   state = { user: {}, isLoading: true, err: null };
@@ -26,8 +27,9 @@ class UserProfile extends Component {
     if (err) return <ErrorShower err={this.state.err} />;
     return (
       <div>
-        <p>{user.username}</p>
-        <img src={user.avatar_url} alt="a user avatar" />
+        <h1 className={styles.user}>{user.username}</h1>
+        <img src={user.avatar_url} alt="a user avatar" className={styles.img} />
+        <h2>Articles posted by {user.username}: </h2>
         <ArticleList user={user.username} />
       </div>
     );

@@ -14,9 +14,7 @@ class CommentList extends Component {
   };
 
   removeComment = id => {
-    api.deleteComment(id).then(response => {
-      console.log(id, response);
-    });
+    api.deleteComment(id).then(response => {});
     this.setState(currentState => {
       let newComments = [...currentState.comments].filter(
         comment => comment.comment_id !== id

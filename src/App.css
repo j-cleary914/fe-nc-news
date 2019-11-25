@@ -4,7 +4,18 @@
   flex-direction: column;
   align-items: center;
   padding: 0 10px;
-  margin: 5px 5px;
+  margin: 10px 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .GenericWrapper {
+    background-color: #f9dede;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    margin: 5px 5px;
+  }
 }
 
 .articleListLi {
@@ -58,4 +69,8 @@ h1 {
 
 h3 {
   margin: 20px;
+}
+
+.welcomeText {
+  padding: 20px;
 }

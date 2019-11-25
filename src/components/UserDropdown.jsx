@@ -1,7 +1,7 @@
-import styles from "./Navbar2.module.css";
+import styles from "./NavbarDesktop.module.css";
 import React from "react";
 
-const Dropdowntest = props => {
+const UserDropdown = props => {
   return (
     <div className={styles.dropdown}>
       Select User:
@@ -10,19 +10,19 @@ const Dropdowntest = props => {
         <button name="weegembump" class={styles.button}>
           weegembump
         </button>
-        <button name="haappyamy2016" class={styles.button}>
+        <button name="haappyamy2016" className={styles.button}>
           haappyamy2016
         </button>
-        <button name="jessjelly" class={styles.button}>
+        <button name="jessjelly" className={styles.button}>
           jessjelly{" "}
         </button>
-        <button name="grumpy19" class={styles.button}>
+        <button name="grumpy19" className={styles.button}>
           grumpy19{" "}
         </button>
-        <button name="tickle122" class={styles.button}>
+        <button name="tickle122" className={styles.button}>
           tickle122{" "}
         </button>
-        <button name="cooljmessy" class={styles.button}>
+        <button name="cooljmessy" className={styles.button}>
           cooljmessy{" "}
         </button>
       </div>
@@ -30,4 +30,4 @@ const Dropdowntest = props => {
   );
 };
 
-export default Dropdowntest;
+export default UserDropdown;

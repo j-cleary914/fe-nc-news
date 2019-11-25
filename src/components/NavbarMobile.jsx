@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import styles from "./Navbartest.module.css";
+import styles from "./NavbarMobile.module.css";
 import { Link } from "@reach/router";
-import Dropdowntest from "./UserDropdown";
+import UserDropdown from "./UserDropdown";
 
-class Navbartest extends Component {
+class NavbarMobile extends Component {
   state = { isHidden: true };
   handleClick = () => {
-    console.log("clicked!", this.state.isHidden);
     this.setState(currentState => {
       return { isHidden: !currentState.isHidden };
     });
@@ -23,7 +22,7 @@ class Navbartest extends Component {
           ></i>
         </div>
 
-        <Dropdowntest
+        <UserDropdown
           className={styles.dropdown}
           user={this.props.user}
           userDropdownClicked={this.props.userDropdownClicked}
@@ -50,4 +49,4 @@ class Navbartest extends Component {
   }
 }
 
-export default Navbartest;
+export default NavbarMobile;

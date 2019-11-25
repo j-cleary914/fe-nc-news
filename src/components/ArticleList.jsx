@@ -21,7 +21,6 @@ class ArticleList extends Component {
       })
       .catch(err => {
         this.setState({ err });
-        console.log(err);
       });
   };
 

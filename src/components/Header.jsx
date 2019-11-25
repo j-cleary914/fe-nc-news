@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar2 from "./Navbar2";
+import NavbarDesktop from "./NavbarDesktop";
 import styles from "./Header.module.css";
-import Navbartest from "./Navbartest";
+import NavbarMobile from "./NavbarMobile";
 import { Link } from "@reach/router";
 
 const Header = props => {
@@ -11,11 +11,11 @@ const Header = props => {
         <h1>NC News</h1>
       </Link>
 
-      <Navbar2
+      <NavbarDesktop
         user={props.user}
         userDropdownClicked={props.userDropdownClicked}
       />
-      <Navbartest
+      <NavbarMobile
         user={props.user}
         userDropdownClicked={props.userDropdownClicked}
       />

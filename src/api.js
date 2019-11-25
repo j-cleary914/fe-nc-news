@@ -1,14 +1,13 @@
 import axios from "axios";
 
 export const getArticles = async (author, topic, sort_by, order) => {
-  console.log({ author }, { topic }, { sort_by }, { order });
   const { data } = await axios.get(
     "https://northcoder-news-backend.herokuapp.com/api/articles",
     {
       params: { author, topic, sort_by, order }
     }
   );
-  //console.log(data.articles);
+
   return data.articles;
 };
 

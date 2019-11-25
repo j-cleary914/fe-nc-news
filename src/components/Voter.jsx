@@ -42,17 +42,13 @@ class Voter extends Component {
         this.props.votingOn === "article" &&
         this.state.downClicked === false
       ) {
-        api.patchArticleVotes(this.props.id, incrementBy).then(response => {
-          console.log(response.article.votes);
-        });
+        api.patchArticleVotes(this.props.id, incrementBy).then(response => {});
       }
       if (
         this.props.votingOn === "comment" &&
         this.state.downClicked === false
       ) {
-        api.patchCommentVotes(this.props.id, incrementBy).then(response => {
-          console.log(response.comment.votes);
-        });
+        api.patchCommentVotes(this.props.id, incrementBy).then(response => {});
       }
     } else if (incrementBy === -1 && this.state.downClicked === true) {
       this.setState({ change: 0, downClicked: false });
@@ -60,17 +56,13 @@ class Voter extends Component {
         this.props.votingOn === "article" &&
         this.state.downClicked === true
       ) {
-        api.patchArticleVotes(this.props.id, 1).then(response => {
-          console.log(response.article.votes);
-        });
+        api.patchArticleVotes(this.props.id, 1).then(response => {});
       }
       if (
         this.props.votingOn === "comment" &&
         this.state.downClicked === true
       ) {
-        api.patchCommentVotes(this.props.id, 1).then(response => {
-          console.log(response.comment.votes);
-        });
+        api.patchCommentVotes(this.props.id, 1).then(response => {});
       }
     }
   };
@@ -90,7 +82,7 @@ class Voter extends Component {
         <button className={upButtonClass} onClick={() => this.handleClick(1)}>
           ▲
         </button>
-        <p>{this.props.votes + this.state.change}</p>
+        <p className={styles.number}>{this.props.votes + this.state.change}</p>
         <button
           className={downButtonClass}
           onClick={() => this.handleClick(-1)}

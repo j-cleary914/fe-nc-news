@@ -1,7 +1,6 @@
 import React from "react";
 
 const ErrorShower = props => {
-  console.log(props.err);
   let errorMsg = "Invalid URL";
   if (props.err) {
     errorMsg = JSON.stringify(props.err);
