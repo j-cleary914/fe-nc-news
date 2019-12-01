@@ -1,7 +1,7 @@
 # fe-nc-news
 
 This is the home of the front end for my NC News website created during the Northcoders Bootcamp.
-The API this project was built on can be found here <add link> and the github for that is here <also link>.
+The API this project was built on can be found [here](https://www.google.com) and the github for that is [here](https://www.google.com).
   
 The entire thing is hosted at https://nc-news-draft.netlify.com
 
